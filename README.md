@@ -1,3 +1,4 @@
+
 # Wishlist Service
 
 ## Descrição
@@ -36,29 +37,18 @@ Se preferir, você pode executar o serviço usando Docker Compose.
 - **URL:** `/api/wishlist/`
 - **Método HTTP:** POST
 - **Corpo da requisição:**
-      ```json
-      {
-          "customerId": "string",
-          "productIds": [
-            "string"
-          ]
-     }
-     ```
-
-### Adicionar um produto à Wishlist do cliente
-- **URL:** `/api/wishlist/add`
-- **Método HTTP:** POST
-- **Corpo da requisição:**
     ```json
     {
-        "productId": "string",
-        "customerId": "string"
+        "customerId": "string",
+        "productIds": [
+            "string"
+        ]
     }
     ```
 
 ### Remover um produto da Wishlist do cliente
-- **URL:** `/api/wishlist/remove`
-- **Método HTTP:** POST
+- **URL:** `/api/wishlist/removeProduct`
+- **Método HTTP:** DELETE
 - **Corpo da requisição:**
     ```json
     {
@@ -91,4 +81,4 @@ Este serviço foi desenvolvido como parte de um desafio técnico e está sujeito
 
 --- 
 
-Este é um modelo básico. Se houver alguma informação adicional que você deseja incluir ou personalizações específicas, me avise!
+Espero que isso ajude! Se precisar de mais alguma coisa, é só dizer.
