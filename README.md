@@ -47,7 +47,7 @@ Se preferir, você pode executar o serviço usando Docker Compose.
     ```
 
 ### Adicioinar um produto da Wishlist do cliente
-- **URL:** `/api/wishlist/remove`
+- **URL:** `/api/wishlist/add`
 - **Método HTTP:** POST
 - **Corpo da requisição:**
     ```json
