@@ -1,0 +1,18 @@
+version: '3.7'
+services:
+  api:
+    build: .
+    depends_on:
+      - mongo
+    ports:
+      - 8090:8090
+    env_file: .env
+  mongo:
+    image: mongo:4.4.6
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: admin
+      MONGO_INITDB_ROOT_PASSWORD: password
+      MONGO_INITDB_DATABASE: luizalabs
+    ports:
+      - 27017:27017
+    command: mongod --logpath=/dev/null
