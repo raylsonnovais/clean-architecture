@@ -46,9 +46,21 @@ Se preferir, você pode executar o serviço usando Docker Compose.
     }
     ```
 
+### Adicioinar um produto da Wishlist do cliente
+- **URL:** `/api/wishlist/remove`
+- **Método HTTP:** POST
+- **Corpo da requisição:**
+    ```json
+    {
+        "productId": "string",
+        "customerId": "string"
+    }
+    ```
+
+
 ### Remover um produto da Wishlist do cliente
-- **URL:** `/api/wishlist/removeProduct`
-- **Método HTTP:** DELETE
+- **URL:** `/api/wishlist/remove`
+- **Método HTTP:** POST
 - **Corpo da requisição:**
     ```json
     {
