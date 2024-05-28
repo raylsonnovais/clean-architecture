@@ -17,6 +17,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Set;
+
 @Tag(name = "Wishlist", description = "Wishlist crud")
 @RestController
 @RequestMapping("/v1/wishlist")
@@ -49,15 +51,24 @@ public class WishlistResource extends RestResource {
         return created(getLocation(addProductWishlistInputData.getCustomerId()));
     }
 
+    @Operation(summary = "Remover produto wishlist")
     @PostMapping("remove")
-    public ResponseEntity<Void> addProduct(@RequestBody RemoveProductWishlistInputData removeProductWishlistInputData){
+    public ResponseEntity<Void> removeProduct(@RequestBody RemoveProductWishlistInputData removeProductWishlistInputData){
         wishlistService.removeProduct(removeProductWishlistInputData.getCustomerId(), removeProductWishlistInputData.getProductId());
         return created(getLocation(removeProductWishlistInputData.getCustomerId()));
     }
 
+    @Operation(summary = "Verificar se produto esta na lista")
     @GetMapping("/{customerId}/{productId}")
     public ResponseEntity<Boolean> isProductInWishList(@PathVariable String customerId, @PathVariable String productId){
         return ResponseEntity
                 .ok(wishlistService.isProductInWishlist(customerId, productId));
+    }
+
+    @Operation(summary = "Listar todos os produtos")
+    @GetMapping("/allProducts/{customerId}")
+    public ResponseEntity<Set<String>> allProducts(@PathVariable String customerId){
+        return ResponseEntity
+                .ok(wishlistService.findAllProductsByWishlist(customerId));
     }
 }
