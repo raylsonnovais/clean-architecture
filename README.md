@@ -45,7 +45,7 @@ Se preferir, você pode executar o serviço usando Docker Compose.
 
 ### Remover um produto da Wishlist do cliente
 - **URL:** `/api/wishlist/removeProduct`
-- **Método HTTP:** DELETE
+- **Método HTTP:** POST
 - **Corpo da requisição:**
     ```json
     {
