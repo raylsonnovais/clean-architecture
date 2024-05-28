@@ -37,13 +37,13 @@ Se preferir, você pode executar o serviço usando Docker Compose.
 - **Método HTTP:** POST
 - **Corpo da requisição:**
       ```json
-        {
+      {
           "customerId": "string",
           "productIds": [
             "string"
           ]
-        }
-        ```
+     }
+     ```
 
 ### Adicionar um produto à Wishlist do cliente
 - **URL:** `/api/wishlist/add`
